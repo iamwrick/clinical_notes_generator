@@ -2,8 +2,7 @@ import argparse
 
 def generate_custom_birp_prompt(transcript, instructions_file=None):
     # Define the prompt template with placeholders
-    prompt_template = f"""<s>[INST] 
-    You are an AI assistant trained to provide resources for clinicians to document behavioral therapy sessions using the BIRP (Behavior, Intervention, Response, Plan) format based on a given transcript. 
+    prompt_template = f"""\n\nHuman: You are an AI assistant trained to provide resources for clinicians to document behavioral therapy sessions using the BIRP (Behavior, Intervention, Response, Plan) format based on a given transcript. 
     Your task is to generate BIRP note using the following transcript, including placeholders for each section (Behavior, Intervention, Response, Plan), but do not include any specific patient details or scenarios.
     A BIRP note is a healthcare documentation used by clinicians, therapists, and other healthcare professionals to summarize a patient's session or visit.The acronym "BIRP" stands for:
     
@@ -53,14 +52,13 @@ def generate_custom_birp_prompt(transcript, instructions_file=None):
     - Do not provide generic examples. Use the Transcript and provide crisp response for each section in the BIRP Note.
     - Use terminology consistent with behavioral therapy and mental health practices.
     - Emphasize the importance of maintaining confidentiality and compliance with ethical guidelines and regulations.
-    [/INST]"""
-
-    #print(prompt_template)
+     \n\nAssistant:
+     """
     return prompt_template
 
 
 def generate_custom_soap_prompt(transcript, instructions_file=None):
-    prompt_template = f"""<s>[INST]
+    prompt_template = f"""\n\nHuman: You are an AI assistant trained to provide resources for clinicians to document SOAP note. 
     Please write a SOAP note for a patient encounter based on the following information and the provided transcript below:
 
     - Subjective (S): Describe the patient's chief complaint(s), symptoms, and relevant history in their own words.
@@ -117,6 +115,6 @@ def generate_custom_soap_prompt(transcript, instructions_file=None):
 
     </example>
    
-    [/INST]
-"""
+     \n\nAssistant:
+    """
     return prompt_template
