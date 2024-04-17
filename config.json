@@ -1,7 +1,4 @@
 {
-  "access_key": "YOURKEY",
-  "secret_key": "YOURSECRET",
   "region": "us-east-1",
-  "s3_bucket_name": "YOURBUCKET",
-  "model_choice": "openai/whisper-large-v3"
+  "model_choice": "openai/whisper-small"
 }
