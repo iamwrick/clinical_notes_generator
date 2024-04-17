@@ -43,8 +43,11 @@ def generate_soap_post_processing(transcript, instruction_file_path):
     Returns:
         dict: SOAP response generated based on the transcript.
     """
+
     prompt = generate_custom_soap_prompt(transcript, instruction_file_path)
     soap_response = query_bedrock_sonet(prompt)
+    print("SOAP note successfully generated....")
+
     return soap_response
 
 
@@ -61,6 +64,8 @@ def generate_birp_post_processing(transcript, instruction_file_path):
     """
     prompt = generate_custom_birp_prompt(transcript, instruction_file_path)
     birp_response = query_bedrock_sonet(prompt)
+    print("BIRP note successfully generated....")
+
     return birp_response
 
 
@@ -104,6 +109,8 @@ def get_transcript(audio_path):
     )
 
     result = pipe(audio_path, generate_kwargs={"language": "english"})
+    print("transcript successfully generated....")
+
     return result["text"]
 
 
@@ -131,13 +138,17 @@ def generate_transcript_from_file(file_path, soap=False, birp=False, instruction
         soap_notes = generate_soap_post_processing(transcript, instructions_file)
         soap_text = soap_notes['content'][0]['text']  # Extract the 'text' content from the dictionary
         save_file(soap_text, '')
+        print("SOAP note saved....")
+
     if birp:
         birp_notes = generate_birp_post_processing(transcript, instructions_file)
         birp_text = birp_notes['content'][0]['text']  # Extract the 'text' content from the dictionary
         save_file(birp_text, '')
+        print("BIRP note saved....")
+
     # End timer
     end_time = time.time()
     elapsed_time = end_time - start_time
 
-    print(f"Transcription completed in {elapsed_time:.2f} seconds.")
+    print(f"Process completed in {elapsed_time:.2f} seconds.")
     return transcript
