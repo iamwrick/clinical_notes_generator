@@ -1,4 +1,4 @@
-# Audio-to-SOAP-Notes Generator
+# Clinical Notes Generator
 
 This Python project utilizes OpenAI's Whisper speech recognition model to generate transcripts from audio or video files, and then leverages Anthropic's Sonnet LLM (Large Language Model) to generate structured medical notes such as SOAP (Subjective, Objective, Assessment, Plan) or BIRP (Background, Impression, Recommendation, Plan) notes based on the transcripts.
 
