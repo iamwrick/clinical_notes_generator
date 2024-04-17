@@ -54,6 +54,6 @@ Contributions are welcome! If you find any issues or have suggestions for improv
 This project is licensed under the MIT License.
 
 ## Acknowledgments
-OpenAI Whisper for speech recognition model
-Anthropic Sonnet LLM for text generation model
-Python and the open-source Python community
+- OpenAI Whisper for speech recognition model
+- Anthropic Sonnet LLM for text generation model via Amazon Bedrock
+- Python and the open-source Python community
