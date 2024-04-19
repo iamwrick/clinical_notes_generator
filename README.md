@@ -16,6 +16,10 @@ This Python project utilizes OpenAI's Whisper speech recognition model to genera
 - Anthropic Sonnet LLM (for text generation) via Amazon Bedrock API
 - Additional Python libraries: `boto3`, `transformers`, `torch`, `accelerate`
 
+NOTE: ffmpeg should be present and configured on the machine where you will run the scripts. 
+
+
+
 ## Installation
 
 1. Clone the repository:
